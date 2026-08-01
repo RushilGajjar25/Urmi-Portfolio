@@ -1,0 +1,465 @@
+/* --- Global Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Recommended modern sans-serif */
+    line-height: 1.6;
+    color: #fff;
+    background-color: #030612; /* Deep Indigo Base */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* --- Colors & Effects --- */
+.tech-mode {
+    --primary-glow: rgba(0, 212, 255, 0.4); /* Cyan Glow */
+    --accent-color: #00d4ff; /* Pure Cyan */
+    --accent-hover: #0099bb;
+    --secondary-accent: #0066cc; /* Cerulean */
+    --bg-gradient: linear-gradient(135deg, #030612 0%, #060b1e 50%, #0b142d 100%);
+    --card-bg: rgba(20, 30, 60, 0.5); /* Semi-transparent navy */
+}
+
+/* --- Layout --- */
+h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.7rem;
+    margin: 3rem 0 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+/* --- Header --- */
+header {
+    background-color: rgba(3, 6, 18, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    backdrop-filter: blur(5px);
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/neural_bg_header.png'); /* Source your neural background image */
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.header-content h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.avatar-placeholder {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: 2px solid var(--accent-color);
+}
+
+/* --- Hero --- */
+.hero-section {
+    margin-top: 120px; /* Offset for fixed header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-text h2 {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-text .subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2rem;
+}
+
+.hero-graphics {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/hero_neural_graphics.png'); /* Source your graphics image */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* --- About --- */
+.about-section {
+    gap: 3rem;
+}
+
+.portrait-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.portrait-photo {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid var(--accent-color);
+    background-color: #fff; /* White bg for placeholder */
+}
+
+.bio-container {
+    width: 55%;
+}
+
+.bio-container h3 {
+    text-align: left;
+    margin: 0 0 1rem;
+}
+
+.details-list {
+    margin-top: 1rem;
+    list-style: none;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* --- Cards General --- */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px var(--primary-glow);
+}
+
+/* --- Internship --- */
+.internship-section h3 {
+    font-size: 1.5rem;
+}
+
+.task-card {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.status-banner {
+    background-color: #28a745; /* Success Green */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-transform: uppercase;
+}
+
+.card-content {
+    margin-top: 1rem;
+}
+
+.task-detail {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.task-status {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+.task-desc {
+    margin: 1rem 0;
+}
+
+.features-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+}
+
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+/* Source your icons here */
+.frontend-icon { background-image: url('assets/icons/react.png'); }
+.backend-icon { background-image: url('assets/icons/nodejs.png'); }
+.db-icon { background-image: url('assets/icons/mongodb.png'); }
+.deploy-icon { background-image: url('assets/icons/vercel.png'); }
+
+.outcome-success {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+}
+
+.expected-outcome {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+.card-graphics {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-image: url('assets/internship_card_neural.png'); /* Source your neural graphics image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.card-graphics.left { top: 20px; left: -125px; transform: rotate(-30deg); }
+.card-graphics.right { bottom: 20px; right: -125px; transform: rotate(30deg); }
+
+/* --- More Projects --- */
+.projects-section h3 {
+    margin: 5rem 0 1.5rem;
+}
+
+.project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.project-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.icon-small:hover { opacity: 1; }
+
+.github-icon { background-image: url('assets/icons/github_small.png'); }
+.link-icon { background-image: url('assets/icons/external_link.png'); }
+
+/* --- Skills --- */
+/* --- Skills --- */
+.skills-section h3 {
+    margin-top: 4rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-tag {
+    background-color: rgba(20, 30, 60, 0.5); /* Matches the card background */
+    border: 1px solid rgba(0, 212, 255, 0.3); /* Subtle cyan border */
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px; /* Creates the pill shape */
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Hover effect: Brightens border, text, and adds a glow */
+.skill-tag:hover {
+    background-color: rgba(0, 212, 255, 0.1);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 15px var(--primary-glow);
+    transform: translateY(-3px);
+}
+
+/* --- Contact --- */
+.contact-section form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--secondary-accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #010206;
+    padding: 3rem 0;
+    margin-top: 5rem;
+}
+
+footer .flex-container {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover { opacity: 1; }
+
+.github-social { background-image: url('assets/icons/github_footer.png'); }
+.linkedin-social { background-image: url('assets/icons/linkedin_footer.png'); }
+.email-social { background-image: url('assets/icons/email_footer.png'); }
+
+.copyright {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    text-align: center;
+}
